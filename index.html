@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RohitInsta - Free Followers</title>
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#0d0d12;
+color:white;
+min-height:100vh;
+}
+.top{
+text-align:center;
+padding:38px 15px 28px;
+background:linear-gradient(135deg,#833ab4,#e1306c,#f77737);
+}
+.logo{
+font-size:36px;
+font-weight:bold;
+}
+.top p{
+margin:8px 0 0;
+}
+.card{
+width:92%;
+max-width:430px;
+margin:20px auto;
+background:#181820;
+padding:25px 20px;
+border-radius:24px;
+}
+h2{
+text-align:center;
+margin-bottom:6px;
+}
+.sub{
+text-align:center;
+color:#aaa;
+font-size:14px;
+}label{
+display:block;
+margin:18px 0 8px;
+font-size:14px;
+}
+input{
+width:100%;
+padding:15px;
+border:1px solid #3b3b46;
+background:#22222b;
+color:white;
+border-radius:12px;
+font-size:16px;
+outline:none;
+}
+.plans{
+display:flex;
+gap:8px;
+margin-top:10px;
+}
+.plan{
+flex:1;
+text-align:center;
+padding:16px 5px;
+background:#22222b;
+border:2px solid transparent;
+border-radius:14px;
+}
+.plan b{
+display:block;
+font-size:21px;
+}
+.plan span{
+font-size:11px;
+color:#aaa;
+}
+.plan.active{
+border-color:#e1306c;
+background:#301b28;
+}
+.mainbtn{
+width:100%;
+margin-top:22px;
+padding:16px;
+border:0;
+border-radius:14px;
+color:white;
+font-size:16px;
+font-weight:bold;
+background:linear-gradient(90deg,#833ab4,#e1306c,#f77737);
+}
+#result{
+display:none;
+text-align:center;
+margin-top:18px;
+padding:15px;
+background:#22222b;
+border-radius:12px;
+}
+.safe,.footer{
+text-align:center;
+color:#888;
+font-size:12px;
+}
+</style>
+</head><body>
+
+<div class="top">
+<div class="logo">RohitInsta</div>
+<p>Instagram Profile Growth</p>
+</div>
+
+<div class="card">
+<h2>Choose Your Growth Goal</h2>
+<p class="sub">Enter your username and select a followers goal</p>
+
+<label>Instagram Username</label>
+<input id="username" type="text" placeholder="@username">
+
+<label>Select Followers Goal</label>
+
+<div class="plans">
+<div class="plan active" onclick="pick(this,100)">
+<b>100</b>
+<span>FOLLOWERS</span>
+</div>
+
+<div class="plan" onclick="pick(this,500)">
+<b>500</b>
+<span>FOLLOWERS</span>
+</div>
+
+<div class="plan" onclick="pick(this,1000)">
+<b>1000</b>
+<span>FOLLOWERS</span>
+</div>
+</div>
+
+<button class="mainbtn" onclick="start()">Continue</button>
+
+<div id="result"></div>
+
+<p class="safe">We never ask for your Instagram password or OTP.</p>
+</div>
+
+<div class="footer">
+RohitInsta © 2026 · Not affiliated with Instagram
+</div><script>
+let goal=100;
+
+function pick(el,n){
+goal=n;
+document.querySelectorAll('.plan').forEach(function(x){
+x.classList.remove('active');
+});
+el.classList.add('active');
+}
+
+function start(){
+let u=document.getElementById('username').value.trim();
+
+if(u==""){
+alert("Please enter your Instagram username");
+return;
+}
+
+let r=document.getElementById('result');
+r.style.display='block';
+r.innerHTML="<b>"+u+"</b><br><br>Selected goal: "+goal+" followers<br><small>Profile promotion demo</small>";
+}
+</script>
+
+</body>
+</html>
